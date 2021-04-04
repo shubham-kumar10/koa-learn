@@ -6,8 +6,7 @@ import router from "./routes/routes";
 import config from "./config";
 
 const app = new Koa();
-
-const PORT = process.env.PORT || 9090;
+const PORT = config.port;
 
 app.use(bodyParser());
 app.use(

@@ -2,6 +2,8 @@ import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import cors from "koa2-cors";
 import logger from "koa-logger";
+import router from "./routes/routes";
+import config from "./config";
 
 const app = new Koa();
 
@@ -14,19 +16,6 @@ app.use(
   })
 );
 app.use(logger());
-
-import Router from "koa-router";
-const router = new Router();
-
-router.get(`/`, async ctx => {
-  try {
-    ctx.body = {
-      status: "success"
-    };
-  } catch (err) {
-    console.error(err);
-  }
-});
 
 app.use(router.routes());
 

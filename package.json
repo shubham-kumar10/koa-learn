@@ -7,11 +7,13 @@
   "author": "Kumar, Shubham",
   "license": "ISC",
   "dependencies": {
+    "knex": "^0.95.4",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.0",
     "koa-logger": "^3.1.0",
     "koa-router": "^7.3.0",
     "koa2-cors": "^2.0.5",
+    "pg": "^8.5.1",
     "redis": "^2.8.0",
     "ts-node": "^3.3.0",
     "typescript": "^3.5.2"

@@ -2,10 +2,11 @@ import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import cors from "koa2-cors";
 import logger from "koa-logger";
+import router from "./routes/heathcheck";
+import config from "./config";
 
 const app = new Koa();
-
-const PORT = process.env.PORT || 9090;
+const PORT = config.port;
 
 app.use(bodyParser());
 app.use(
@@ -14,19 +15,6 @@ app.use(
   })
 );
 app.use(logger());
-
-import Router from "koa-router";
-const router = new Router();
-
-router.get(`/`, async ctx => {
-  try {
-    ctx.body = {
-      status: "success"
-    };
-  } catch (err) {
-    console.error(err);
-  }
-});
 
 app.use(router.routes());
 
